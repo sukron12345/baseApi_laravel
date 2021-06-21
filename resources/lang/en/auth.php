@@ -13,10 +13,11 @@ return [
     */
 
     'login' => 'Login success.',
-    'profile' => 'Get data Profile success.',
     'logout' => 'Logout success.',
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
+    'password_change' => 'Password changed !',
+    'profile' => 'Get data Profile success.',
     'throttle' =>
         'Too many login attempts. Please try again in :seconds seconds.',
 ];

@@ -2,6 +2,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,6 @@ Route::post('auth/login', [AuthController::class, 'login'])->name('login');
 Route::group(['middleware' => ['jwt.auth']], function () {
     Route::post('auth/logout', [AuthController::class, 'logout']);
     Route::get('auth/me', [AuthController::class, 'me']);
+
+    Route::post('auth/change-password', [PasswordController::class, 'change']);
 });

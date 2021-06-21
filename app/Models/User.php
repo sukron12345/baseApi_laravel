@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
+use App\Models\UserProfile;
 class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
@@ -17,7 +18,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['email', 'password'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -53,5 +54,14 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * Relations
+     */
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class);
     }
 }
