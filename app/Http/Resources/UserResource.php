@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'full_name' => $this->profile->full_name,
             'email' => $this->email,
             'address' => $this->profile->address,
+            'merchant_name' => $this->merchant->name ?? null,
         ];
 
         return $data;

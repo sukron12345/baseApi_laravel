@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\PasswordController;
+use App\Http\Controllers\Api\V1\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
     Route::post('auth/change-password', [PasswordController::class, 'change']);
 });
+
+Route::get('products/public', [ProductController::class, 'index']);

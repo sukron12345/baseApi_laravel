@@ -64,4 +64,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasOne(UserProfile::class);
     }
+
+    public function merchant()
+    {
+        return $this->hasOne(Merchant::class);
+    }
 }
